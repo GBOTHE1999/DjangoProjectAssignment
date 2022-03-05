@@ -1,0 +1,22 @@
+{% extends 'User/base.html' %}
+{% block title%} Category Types {% endblock %}
+{% block content %}
+ 
+ 
+<div style="margin-left: 5cm;">
+    <h1 class="ml"> All Products </h1>
+    
+    {% for item in product_menu_list %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+    
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">{{item.weight}}_KG</p>
+          <p class="card-text">{{item.price}}_Rupees Only</p>
+          <a href="#" class="card-link">{{item.created_at}}</a>
+          {{item.user.first_name}}_{{item.user.last_name}}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+{% endblock %}
